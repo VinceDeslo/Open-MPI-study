@@ -43,6 +43,6 @@ int customBroadcast(void *buf, int count, MPI_Datatype datatype, int root, MPI_C
         MPI_Send(buf, count, datatype, receiver, MPI_ANY_TAG, communicator);
   }
   else {
-    MPI_Recv(&buf, count, datatype, sender, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    MPI_Recv(&buf, count, datatype, sender, MPI_ANY_TAG, communicator, MPI_STATUS_IGNORE);
   }
 }
